@@ -1,12 +1,16 @@
+import { cn } from "@/lib/utils"
 
 
+type containerProps = {
+    children: React.ReactNode,
+    className?: string
+}
 
-import React from 'react'
 
-function Container() {
+function Container({ children, className }: containerProps) {
     return (
-        <div>
-
+        <div className={cn("mx-auto max-w-6xl xl:max-w-7xl px-8", className)}>
+            {children}
         </div>
     )
 }
