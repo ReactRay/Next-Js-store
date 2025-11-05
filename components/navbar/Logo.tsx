@@ -7,7 +7,7 @@ import React from 'react'
 function Logo() {
     return (
         <Button size={'icon'} asChild>
-            <Link className="bg-black" href='/' >
+            <Link href='/' >
                 <FaCode className='w-6 h-6' />
             </Link>
         </Button>
