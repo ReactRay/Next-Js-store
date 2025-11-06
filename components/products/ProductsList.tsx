@@ -1,9 +1,9 @@
 import React from 'react'
-
-function ProductsList() {
+import { Product } from '@prisma/client'
+function ProductsList({ products }: { products: Product[] }) {
     return (
         <div>
-
+            product list
         </div>
     )
 }

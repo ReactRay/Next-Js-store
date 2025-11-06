@@ -5,6 +5,7 @@ import React from 'react'
 import EmptyList from '../global/EmptyList'
 import SectionTitle from '../global/SectionTitle'
 import ProductsGrid from '../products/ProductsGrid'
+import { Separator } from '../ui/separator'
 
 async function FeaturedProducts() {
 
@@ -14,6 +15,7 @@ async function FeaturedProducts() {
     return (
         <section className='pt-24'>
             <SectionTitle text='Featured Products' />
+            <Separator className='mt-2' />
             <ProductsGrid products={products} />
 
         </section>
