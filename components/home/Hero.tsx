@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { Button } from '../ui/button'
+import HeroCarousel from './HeroCarousel'
 
 function Hero() {
     return (
@@ -18,6 +19,7 @@ function Hero() {
                     <Link href='/products'>Shop Now</Link>
                 </Button>
             </div>
+            <HeroCarousel />
         </div>
     )
 }
