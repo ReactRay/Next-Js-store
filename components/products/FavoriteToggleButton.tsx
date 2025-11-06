@@ -11,3 +11,4 @@ function FavoriteToggleButton({ productId }: { productId: string }) {
 }
 
 export default FavoriteToggleButton
+    >
