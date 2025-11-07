@@ -4,6 +4,7 @@ import './globals.css';
 import NavBar from '@/components/navbar/NavBar';
 import Container from '@/components/global/Container';
 import Providers from './Providers';
+import { ClerkProvider } from '@clerk/nextjs';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -17,22 +18,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' suppressHydrationWarning>
-      <body className={inter.className}>
-        <Providers>
+    <ClerkProvider>
+
+
+      <html lang='en' suppressHydrationWarning>
+        <body className={inter.className}>
+          <Providers>
 
 
 
 
-          <NavBar />
-          <Container className='py-20'>
+            <NavBar />
+            <Container className='py-20'>
 
-            {children}
+              {children}
 
-          </Container>
+            </Container>
 
-        </Providers>
-      </body>
-    </html>
+          </Providers>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
