@@ -11,8 +11,9 @@ import { Card, CardContent } from '../ui/card'
 const carouselImages = [image1, image2, image3, image4];
 
 function HeroCarousel() {
+
     return (
-        <div className=' hidden  lg:block'>
+        <div className='mt-10 lg:mt-0 lg:block'>
             <Carousel >
                 <CarouselContent>
                     {carouselImages.map((image, index) => {
@@ -31,8 +32,11 @@ function HeroCarousel() {
                         );
                     })}
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
+                <div className='hidden lg:block'>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                </div>
+
             </Carousel>
         </div>
     )
