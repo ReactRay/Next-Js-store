@@ -5,12 +5,24 @@ import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 
 
-function sidebar() {
-    return (
-        <div>
+function Sidebar() {
+    const pathName = usePathname();
 
-        </div>
+
+    return (
+        <aside>
+            {adminLinks.map((link) => {
+                const isActive = pathName === link.href;
+                const variant = isActive ? 'default' : 'ghost'
+                return (
+                    <Button asChild className='w-full mb-2 capitalize font-normal' variant={variant}>
+                        <Link href={link.href}>{link.label}</Link>
+                    </Button>
+                )
+            })}
+
+        </aside>
     )
 }
 
-export default sidebar
+export default Sidebar
