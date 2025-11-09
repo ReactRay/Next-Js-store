@@ -14,6 +14,13 @@ const getauthuser = async () => {
     return user
 }
 
+const renderError = (error: unknown): { message: string } => {
+    console.log(error);
+    return {
+        message: error instanceof Error ? error.message : 'An error occurred',
+    };
+}
+
 export async function fetchFeaturedProducts() {
     const products = await db.product.findMany({
         where: {
@@ -83,7 +90,7 @@ export const createProductAction = async (prevState: any, formData: FormData)
         return { message: 'product created' }
 
     } catch (error) {
-        return { message: ' there was an error ' + error }
+        return renderError(error);
     }
 
 }
